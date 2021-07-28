@@ -67,6 +67,7 @@
     name: zerotier
     description: ZeroTier
     baseurl: http://download.zerotier.com/redhat/fc/22
+    gpgkey: https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg
     gpgcheck: yes
     enabled: yes
 
