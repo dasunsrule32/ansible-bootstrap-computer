@@ -39,7 +39,6 @@
       - terraform
       - libatomic
       - obs-studio
-      - zoom
       - keybase
       - slack
       - pv
@@ -81,6 +80,7 @@
     name:
       - org.signal.Signal
       - org.gnome.Extensions
+      - us.zoom.Zooom
     state: present
 
 - name: Install Nice Client
