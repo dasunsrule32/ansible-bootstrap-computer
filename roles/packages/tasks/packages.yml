@@ -82,6 +82,7 @@
       - org.gnome.Extensions
       - us.zoom.Zoom
       - com.discordapp.Discord
+      - com.bitwarden.desktop
     state: present
 
 - name: Install Nice Client
