@@ -23,17 +23,17 @@
     gpgcheck: yes
     enabled: yes
 
-- name: Installing Openrazer Repo 
+- name: Installing Openrazer Repo
   yum_repository:
     name: hardware_razer
     file: hardware:razer
-    description: Openrazer 
+    description: Openrazer
     baseurl: https://download.opensuse.org/repositories/hardware:/razer/Fedora_34/
     gpgkey: https://download.opensuse.org/repositories/hardware:/razer/Fedora_34/repodata/repomd.xml.key
     gpgcheck: yes
     enabled: yes
 
-- name: Installing Hashicorp Repo 
+- name: Installing Hashicorp Repo
   yum_repository:
     name: hashicorp
     description: Hashicorp Stable - $basearch
@@ -42,7 +42,7 @@
     gpgcheck: yes
     enabled: yes
 
-- name: Installing Keybase Repo 
+- name: Installing Keybase Repo
   yum_repository:
     name: keybase
     description: Keybase
@@ -52,7 +52,7 @@
     enabled: yes
     metadata_expire: 60
 
-- name: Installing Microsoft Teams Repo 
+- name: Installing Microsoft Teams Repo
   yum_repository:
     name: teams-insiders
     file: teams
@@ -62,11 +62,11 @@
     gpgcheck: yes
     enabled: yes
 
-- name: Installing Zerotier Repo 
+- name: Installing Zerotier Repo
   yum_repository:
     name: zerotier
     description: ZeroTier
-    baseurl: http://download.zerotier.com/redhat/fc/22 
+    baseurl: http://download.zerotier.com/redhat/fc/22
     gpgcheck: yes
     enabled: yes
 
