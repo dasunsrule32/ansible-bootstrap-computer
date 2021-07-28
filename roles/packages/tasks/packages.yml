@@ -4,7 +4,6 @@
     name: 'https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm'
     state: present 
 
-
 - name: Install RPMFUSION nonfree repo package
   dnf:
     name: 'https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm'
