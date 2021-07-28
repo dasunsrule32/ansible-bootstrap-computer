@@ -1,2 +1,3 @@
 # ansible-bootstrap-computer
-Configure laptop from the ground up.
+
+Customize Fedora install
