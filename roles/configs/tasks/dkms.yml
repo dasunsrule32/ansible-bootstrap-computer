@@ -1,0 +1,28 @@
+---
+- name: Creating directories
+  file:
+    path: /root/module-signing
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Configuring MOK signing scripts
+  copy:
+    src: "{{ item }}"
+    dest: "/root/module-signing"
+    owner: root
+    group: root
+    mode: 0744
+  loop:
+    - root/module-signing/dkms-sign-module
+    - root/module-signing/one-time-setup
+    - root/module-signing/sign-modules
+
+- name: Configuring DKMS - Openrazer 
+  copy:
+    src: etc/dkms/openrazer-driver.conf
+    dest: /etc/dkms/openrazer-driver.conf
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
