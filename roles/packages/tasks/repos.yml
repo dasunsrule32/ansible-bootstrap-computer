@@ -63,6 +63,16 @@
     sslcacert: /etc/pki/tls/certs/ca-bundle.crt
     enabled: yes
 
+- name: Installing Visual Studio Code Repo
+  yum_repository:
+    name: code
+    file: vscode
+    description: Visual Studio Code
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: yes
+    enabled: yes
+
 - name: Installing Microsoft Teams Repo
   yum_repository:
     name: teams-insiders
