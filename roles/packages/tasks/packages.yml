@@ -5,6 +5,7 @@
       - gcc
       - python-devel
       - openssl-devel
+      - openssl
       - perl-JSON
       - python-netaddr
       - sshpass
