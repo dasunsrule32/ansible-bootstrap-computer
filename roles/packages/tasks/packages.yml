@@ -86,7 +86,6 @@
 
 - name: Install Nice Client
   dnf:
-   #name: 'https://d1uj6qtbmh3dt5.cloudfront.net/2021.1/Clients/nice-dcv-viewer-2021.1.3473-1.el8.x86_64.rpm'
    name: "{{ nice_client_url }}"
    disable_gpg_check: yes
    state: present
