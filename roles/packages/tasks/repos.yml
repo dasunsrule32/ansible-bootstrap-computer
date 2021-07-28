@@ -1,0 +1,80 @@
+---
+- name: Installing Brave Browser Repo
+  yum_repository:
+    name: brave-browser
+    description: Brave Browser
+    baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+    enabled: yes
+
+- name: Installing Github CLI Repo
+  yum_repository:
+    name: gh-cli
+    description: Github CLI
+    baseurl: https://cli.github.com/packages/rpm
+    gpgkey: http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xc99b11deb97541f0
+    enabled: yes
+
+- name: Installing Google Chrome Repo
+  yum_repository:
+    name: google-chrome
+    description: Google Chrome
+    baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
+    gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+    gpgcheck: yes
+    enabled: yes
+
+- name: Installing Openrazer Repo 
+  yum_repository:
+    name: hardware_razer
+    file: hardware:razer
+    description: Openrazer 
+    baseurl: https://download.opensuse.org/repositories/hardware:/razer/Fedora_34/
+    gpgkey: https://download.opensuse.org/repositories/hardware:/razer/Fedora_34/repodata/repomd.xml.key
+    gpgcheck: yes
+    enabled: yes
+
+- name: Installing Hashicorp Repo 
+  yum_repository:
+    name: hashicorp
+    description: Hashicorp Stable - $basearch
+    baseurl: https://rpm.releases.hashicorp.com/fedora/$releasever/$basearch/stable
+    gpgkey: https://rpm.releases.hashicorp.com/gpg
+    gpgcheck: yes
+    enabled: yes
+
+- name: Installing Keybase Repo 
+  yum_repository:
+    name: keybase
+    description: Keybase
+    baseurl: http://prerelease.keybase.io/rpm/x86_64
+    gpgkey: https://keybase.io/docs/server_security/code_signing_key.asc
+    gpgcheck: yes
+    enabled: yes
+    metadata_expire: 60
+
+- name: Installing Microsoft Teams Repo 
+  yum_repository:
+    name: teams-insiders
+    file: teams
+    description: Microsoft Teams Insiders
+    baseurl: https://packages.microsoft.com/yumrepos/ms-teams
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: yes
+    enabled: yes
+
+- name: Installing Zerotier Repo 
+  yum_repository:
+    name: zerotier
+    description: ZeroTier
+    baseurl: http://download.zerotier.com/redhat/fc/22 
+    gpgcheck: yes
+    enabled: yes
+
+- name: Installing Flathub Repo
+  command:
+    argv:
+      - /usr/bin/flatpak
+      - remote-add
+      - --if-not-exists
+      - flathub
+      - https://flathub.org/repo/flathub.flatpakrepo
