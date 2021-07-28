@@ -81,6 +81,7 @@
       - org.signal.Signal
       - org.gnome.Extensions
       - us.zoom.Zooom
+      - com.discordapp.Discord
     state: present
 
 - name: Install Nice Client
