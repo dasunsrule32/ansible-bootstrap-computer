@@ -1,0 +1,5 @@
+---
+nice_client: nice-dcv-viewer
+nice_client_ver: 2021.1.3473-1.el8.x86_64.rpm
+nice_client_url: "https://d1uj6qtbmh3dt5.cloudfront.net/2021.1/Clients/{{ nice_client }}-{{ nice_client_ver }}"
+nice_client_checksum: sha256:2b462f91c90ccd8c944dd6d9726a97a61cd701311c4872845ff1bc4a00c823eb

@@ -1,1 +1,91 @@
 ---
+- name: Install DNF packages
+  dnf:
+    name:
+      - gcc
+      - python-devel
+      - openssl-devel
+      - perl-JSON
+      - python-netaddr
+      - sshpass
+      - power-profiles-daemon
+      - libva-utils
+      - libva
+      - ffmpeg
+      - gstreamer1-plugins-base
+      - gstreamer1-plugins-bad-*
+      - gstreamer1-plugins-good-*
+      - gstreamer1-plugin-openh264
+      - gstreamer1-libav
+      - gstreamer1-vaapi
+      - lame*
+      - intel-media-driver
+      - kernel-devel
+      - kernel-headers
+      - openrazer-meta
+      - polychromatic
+      - kernel-devel
+      - teams-insiders
+      - libnsl
+      - htop
+      - snapper
+      - python3-dnf-plugin-snapper
+      - nmap
+      - dnf-plugin-tracer
+      - dnf-plugins-core
+      - python-dnf
+      - golang
+      - vault
+      - terraform
+      - libatomic
+      - obs-studio
+      - zoom
+      - keybase
+      - slack
+      - pv
+      - zstd
+      - rclone
+      - remmina
+      - gh
+      - code
+      - vim
+      - google-chrome-stable
+      - brave-browser
+    exclude:
+      - gstreamer1-plugins-bad-free-devel
+      - lame-devel
+    state: present
+
+- name: Update DNF packages
+  dnf:
+    name: "*"
+    state: latest
+
+- name: Install Python Packages
+  pip:
+    name:
+      - ansible
+      - boto3
+      - jsonmerge
+      - prettytable
+      - jq
+      - datadog
+      - python-gilt
+      - infoblox-client
+      - toml
+      - ansible-lint[community,yamllint]
+    state: present
+
+- name: Install Flatpak Packages
+  flatpak:
+    name:
+      - org.signal.Signal
+      - org.gnome.Extensions
+    state: present
+
+- name: Install Nice Client
+  dnf:
+   #name: 'https://d1uj6qtbmh3dt5.cloudfront.net/2021.1/Clients/nice-dcv-viewer-2021.1.3473-1.el8.x86_64.rpm'
+   name: "{{ nice_client_url }}"
+   disable_gpg_check: yes
+   state: present
