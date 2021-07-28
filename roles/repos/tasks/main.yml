@@ -1,0 +1,4 @@
+---
+- include: repos.yml
+  tags:
+    - repos
