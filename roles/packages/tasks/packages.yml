@@ -80,7 +80,7 @@
     name:
       - org.signal.Signal
       - org.gnome.Extensions
-      - us.zoom.Zooom
+      - us.zoom.Zoom
       - com.discordapp.Discord
     state: present
 
