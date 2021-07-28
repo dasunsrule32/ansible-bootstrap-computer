@@ -58,7 +58,9 @@
     description: Slack
     baseurl: https://packagecloud.io/slacktechnologies/slack/fedora/21/x86_64
     gpgkey: https://packagecloud.io/gpg.key
-    gpgcheck: yes
+    gpgcheck: no
+    sslverify: yes
+    sslcacert: /etc/pki/tls/certs/ca-bundle.crt
     enabled: yes
 
 - name: Installing Microsoft Teams Repo
