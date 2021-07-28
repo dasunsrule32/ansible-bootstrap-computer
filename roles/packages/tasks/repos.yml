@@ -52,6 +52,15 @@
     enabled: yes
     metadata_expire: 60
 
+- name: Installing Slack Repo
+  yum_repository:
+    name: slack
+    description: Slack
+    baseurl: https://packagecloud.io/slacktechnologies/slack/fedora/21/x86_64
+    gpgkey: https://packagecloud.io/gpg.key
+    gpgcheck: yes
+    enabled: yes
+
 - name: Installing Microsoft Teams Repo
   yum_repository:
     name: teams-insiders
@@ -79,3 +88,13 @@
       - --if-not-exists
       - flathub
       - https://flathub.org/repo/flathub.flatpakrepo
+
+- name: Install RPMFUSION free repo package
+  dnf:
+    name: 'https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm'
+    state: present
+
+- name: Install RPMFUSION nonfree repo package
+  dnf:
+    name: 'https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm'
+    state: present
