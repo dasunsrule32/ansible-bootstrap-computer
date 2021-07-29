@@ -26,3 +26,12 @@
     group: root
     mode: 0644
     backup: yes
+
+- name: Check if MOK cert exists
+  stat:
+    path: "/root/module-signing/MOK.der"
+  register: cert_file
+
+- name: Execute One Time MOK Setup
+  command: /root/module-signing/one-time-setup
+  when: not cert_file.stat.exists
