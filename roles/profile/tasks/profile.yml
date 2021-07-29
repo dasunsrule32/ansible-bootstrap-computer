@@ -33,3 +33,25 @@
     - {line: 'complete -o nospace -C /usr/bin/vault vault'}
     - {line: 'complete -o nospace -C /usr/bin/terraform terraform'}
     - {line: 'source <(awless completion zsh)'}
+
+- name: Add BASH paths and autocompletion
+  blockinfile:
+    path: /etc/skel/.bash_profile
+    insertafter: '.*# User specific environment and startup programs'
+    block: |
+      export KUBECONFIG=$KUBECONFIG:~/.kube/config
+      export EDITOR=/usr/bin/vim
+      export PATH=$HOME/go/bin:$PATH
+      export GOPATH=~/go
+
+      # AWS
+      [ -f /usr/local/bin/helm ] && source <(helm completion bash)
+      [ -f /usr/local/bin/kubectl ] && source <(kubectl completion bash)
+      [ -f /usr/local/bin/eksctl ] && source <(eksctl completion bash)
+      [ -f /usr/local/bin/aws_completer ] && complete -C /usr/local/bin/aws_completer aws
+      source <(awless completion bash)
+
+      # Hashicorp
+      [ -f /usr/bin/vault ] && complete -C /usr/bin/vault vault
+      [ -f /usr/bin/terraform ] && complete -C /usr/bin/terraform terraform
+    state: present
