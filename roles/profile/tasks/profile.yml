@@ -1,0 +1,12 @@
+---
+- name: Creating user folders
+  file:
+    path: "{{ item }}"
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+  loop:
+    - /etc/skel/bin
+    - /etc/skel/go/bin
+    - /etc/skel/git
