@@ -10,3 +10,26 @@
     - /etc/skel/bin
     - /etc/skel/go/bin
     - /etc/skel/git
+
+- name: Add ZSH paths
+  lineinfile:
+    path: /etc/skel/.zshrc
+    line: "{{ item.line }}"
+    insertafter: '.*# functions, options, key bindings, etc.'
+    state: present
+  loop:
+    - {line: 'export GOPATH=~/go'}
+    - {line: 'export PATH=$HOME/go/bin:$PATH'}
+    - {line: 'export PATH=$HOME/.local/bin:$PATH'}
+    - {line: 'export EDITOR=/usr/bin/vim'}
+
+- name: Add ZSH autocompletion
+  lineinfile:
+    path: /etc/skel/.zshrc
+    line: "{{ item.line }}"
+    state: present
+  loop:
+    - {line: '# Autocompletion'}
+    - {line: 'complete -o nospace -C /usr/bin/vault vault'}
+    - {line: 'complete -o nospace -C /usr/bin/terraform terraform'}
+    - {line: 'source <(awless completion zsh)'}
