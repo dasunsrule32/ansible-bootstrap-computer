@@ -56,11 +56,6 @@
       - lame-devel
     state: present
 
-- name: Update DNF packages
-  dnf:
-    name: "*"
-    state: latest
-
 - name: Install Python Packages
   pip:
     name:

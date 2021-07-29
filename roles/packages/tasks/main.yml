@@ -2,3 +2,7 @@
 - include: packages.yml
   tags:
     - packages
+
+- include: updates.yml
+  tags:
+    - updates
