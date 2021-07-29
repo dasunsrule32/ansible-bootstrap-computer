@@ -18,7 +18,7 @@
     - root/module-signing/one-time-setup
     - root/module-signing/sign-modules
 
-- name: Configuring DKMS - Openrazer 
+- name: Configuring DKMS - Openrazer
   copy:
     src: etc/dkms/openrazer-driver.conf
     dest: /etc/dkms/openrazer-driver.conf
