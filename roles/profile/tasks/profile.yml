@@ -24,15 +24,14 @@
     - {line: 'export EDITOR=/usr/bin/vim'}
 
 - name: Add ZSH autocompletion
-  lineinfile:
+  blockinfile:
     path: /etc/skel/.zshrc
-    line: "{{ item.line }}"
+    block: |
+      # Autocompletion
+      complete -o nospace -C /usr/bin/vault vault
+      complete -o nospace -C /usr/bin/terraform terraform
+      source <(awless completion zsh)
     state: present
-  loop:
-    - {line: '# Autocompletion'}
-    - {line: 'complete -o nospace -C /usr/bin/vault vault'}
-    - {line: 'complete -o nospace -C /usr/bin/terraform terraform'}
-    - {line: 'source <(awless completion zsh)'}
 
 - name: Add BASH paths and autocompletion
   blockinfile:
