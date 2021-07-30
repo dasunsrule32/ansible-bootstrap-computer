@@ -69,6 +69,7 @@
       - infoblox-client
       - toml
       - ansible-lint[community,yamllint]
+      - cryptography
     state: present
 
 - name: Install Flatpak Packages
