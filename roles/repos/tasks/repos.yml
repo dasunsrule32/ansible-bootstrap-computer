@@ -42,6 +42,16 @@
     gpgcheck: yes
     enabled: yes
 
+- name: Installing Insync Repo
+  yum_repository:
+    name: insync
+    description: Insync
+    baseurl: http://yum.insync.io/fedora/$releasever
+    gpgkey: https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
+    gpgcheck: yes
+    enabled: yes
+    metadata_expire: 120m
+
 - name: Installing Keybase Repo
   yum_repository:
     name: keybase
