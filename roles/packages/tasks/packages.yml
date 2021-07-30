@@ -52,6 +52,7 @@
       - google-chrome-stable
       - brave-browser
       - zsh
+      - insync
     exclude:
       - gstreamer1-plugins-bad-free-devel
       - lame-devel
