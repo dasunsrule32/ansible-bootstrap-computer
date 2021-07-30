@@ -51,6 +51,7 @@
       - vim
       - google-chrome-stable
       - brave-browser
+      - zsh
     exclude:
       - gstreamer1-plugins-bad-free-devel
       - lame-devel
