@@ -1,0 +1,12 @@
+---
+- name: Create my user
+  user:
+    name: "{{ username }}"
+    password: "{{ userpw | string | password_hash('sha512') }}"
+    comment: "{{ fullname }}"
+    shell: /usr/bin/zsh
+    home: "/home/{{ username }}"
+    uid: 1000
+    group: 1000
+    groups: wheel,plugdev
+    update_password: on_create
