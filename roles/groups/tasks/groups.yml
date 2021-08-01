@@ -1,6 +1,10 @@
 ---
+- name: Include global vars
+  include_vars:
+    file: vars/main.yml
+
 - name: Create my group
   group:
-    name: "{{ username }}"
+    name: "{{ user_group }}"
     gid: 1000
     state: present
