@@ -1,0 +1,6 @@
+---
+- name: Create my group
+  group:
+    name: "{{ username }}"
+    gid: 1000
+    state: present
