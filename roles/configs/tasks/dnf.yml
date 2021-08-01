@@ -1,0 +1,6 @@
+---
+- name: Enable Delta RPM's
+  lineinfile:
+    path: /etc/dnf/dnf.conf
+    line: deltarpm=true
+    state: present

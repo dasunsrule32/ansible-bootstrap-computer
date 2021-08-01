@@ -3,3 +3,8 @@
   tags:
     - dkms
     - configs
+
+- include: dnf.yml
+  tags:
+    - dnf
+    - configs
