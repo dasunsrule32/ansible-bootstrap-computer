@@ -1,4 +1,8 @@
 ---
-- include: repos.yml
+- include: dnf.yml
+  tags:
+    - repos
+
+- include: flatpak.yml
   tags:
     - repos
