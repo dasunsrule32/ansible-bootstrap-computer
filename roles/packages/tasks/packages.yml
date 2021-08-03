@@ -82,7 +82,6 @@
     name:
       - org.signal.Signal
       - org.gnome.Extensions
-      - us.zoom.Zoom
       - com.discordapp.Discord
       - com.bitwarden.desktop
     state: present
