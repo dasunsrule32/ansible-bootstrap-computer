@@ -38,6 +38,8 @@
       - golang
       - vault
       - terraform
+      - vagrant
+      - consul
       - libatomic
       - obs-studio
       - keybase
