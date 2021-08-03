@@ -40,6 +40,7 @@
       - terraform
       - vagrant
       - consul
+      - packer
       - libatomic
       - obs-studio
       - keybase
