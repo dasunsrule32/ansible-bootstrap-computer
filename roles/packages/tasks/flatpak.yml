@@ -1,0 +1,9 @@
+---
+- name: Install Flatpak Packages
+  flatpak:
+    name:
+      - org.signal.Signal
+      - org.gnome.Extensions
+      - com.discordapp.Discord
+      - com.bitwarden.desktop
+    state: present

@@ -1,5 +1,17 @@
 ---
-- include: packages.yml
+- include: dnf.yml
+  tags:
+    - packages
+
+- include: python.yml
+  tags:
+    - packages
+
+- include: flatpak.yml
+  tags:
+    - packages
+
+- include: rpm.yml
   tags:
     - packages
 

@@ -1,0 +1,16 @@
+---
+- name: Install Python Packages
+  pip:
+    name:
+      - ansible
+      - boto3
+      - jsonmerge
+      - prettytable
+      - jq
+      - datadog
+      - python-gilt
+      - infoblox-client
+      - toml
+      - ansible-lint[community,yamllint]
+      - cryptography
+    state: present

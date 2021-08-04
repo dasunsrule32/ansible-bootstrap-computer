@@ -1,0 +1,6 @@
+---
+- name: Install Nice Client
+  dnf:
+    name: "{{ nice_client_url }}"
+    disable_gpg_check: yes
+    state: present
