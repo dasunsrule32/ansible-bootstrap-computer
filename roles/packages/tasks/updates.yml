@@ -4,14 +4,7 @@
     name: "*"
     state: latest
 
-- name: Check Flatpak packages
-  command: /usr/bin/flatpak update --noninteractive --no-deploy
-  register: flatpak_check
-
-- name: Flatpak Result
-  debug:
-    msg: "{{ flatpak_check.stdout }}"
-
 - name: Update Flatpak packages
   command: /usr/bin/flatpak update --noninteractive
-  when: flatpak_check.stdout != "Nothing to do."
+  register: flatpak_check
+  changed_when: "flatpak_check.rc != 0"
