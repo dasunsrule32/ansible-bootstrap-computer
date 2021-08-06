@@ -1,0 +1,33 @@
+---
+- name: Verify Helm Archive
+  stat:
+    path: "/usr/local/src/{{ helm_archive }}"
+    get_checksum: yes
+    checksum_algorithm: sha256
+  register: archive
+
+- name: Downloading Helm Archive
+  become: yes
+  get_url:
+    url: "{{ helm_url }}"
+    dest: "/usr/local/src"
+    checksum: "{{ helm_checksum }}"
+    validate_certs: yes
+    force: yes
+  when: not archive.stat.exists or ('sha256:' + archive.stat.checksum) != helm_checksum
+
+- name: Installing Helm
+  become: yes
+  unarchive:
+    src: "/usr/local/src/{{ helm_archive }}"
+    dest: "/usr/local/bin"
+    owner: root
+    group: root
+    mode: 0755
+    copy: no
+    exclude:
+      - "LICENSE"
+      - "README.md"
+    extra_opts:
+      - --strip-components=1
+  ignore_errors: yes

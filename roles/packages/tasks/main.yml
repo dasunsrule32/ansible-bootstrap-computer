@@ -15,6 +15,10 @@
   tags:
     - packages
 
+- include: binary.yml
+  tags:
+    - packages
+
 - include: updates.yml
   tags:
     - updates

@@ -3,3 +3,9 @@ nice_client: nice-dcv-viewer
 nice_client_ver: 2021.1.3560-1.el8
 nice_client_url: "https://d1uj6qtbmh3dt5.cloudfront.net/2021.1/Clients/{{ nice_client }}-{{ nice_client_ver }}.x86_64.rpm"
 nice_client_checksum: sha256:e64d5726c4ad99cc1abbd5be1abbebe4628f008fb138ab6158650252f7b260e2
+
+helm_name: helm
+helm_version: 3.6.3
+helm_checksum: sha256:07c100849925623dc1913209cd1a30f0a9b80a5b4d6ff2153c609d11b043e262
+helm_archive: "{{ helm_name }}-v{{ helm_version }}-linux-amd64.tar.gz"
+helm_url: "https://get.helm.sh/{{ helm_archive }}"
