@@ -1,11 +1,4 @@
 ---
-- hosts: localhost
-  gather_facts: yes
-  become: yes
-  roles:
-   - repos
-   - packages
-   - configs
-   - profile
-   - groups
-   - users
+- include: computer.yml
+  tags:
+    - computer

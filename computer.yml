@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  become: yes
+  roles:
+   - repos
+   - packages
+   - configs
+   - skel
+   - groups
+   - accounts
