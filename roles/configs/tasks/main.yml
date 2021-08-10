@@ -13,3 +13,8 @@
   tags:
     - network
     - configs
+
+- include: zerotier.yml
+  tags:
+    - network
+    - configs
