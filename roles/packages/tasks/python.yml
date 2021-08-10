@@ -13,4 +13,4 @@
       - toml
       - ansible-lint[community,yamllint]
       - cryptography
-    state: present
+    state: latest
