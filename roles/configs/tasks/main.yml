@@ -8,3 +8,8 @@
   tags:
     - dnf
     - configs
+
+- include: network-manager.yml
+  tags:
+    - network
+    - configs

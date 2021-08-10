@@ -1,0 +1,12 @@
+---
+- name: Configuring NetworkManager Connections
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/NetworkManager/system-connections"
+    owner: root
+    group: root
+    mode: 0600
+  loop:
+    - "etc/NetworkManager/system-connections/ASU SSLVPN.nmconnection"
+    - "etc/NetworkManager/system-connections/dasunsrule32-5G.nmconnection"
+    - "etc/NetworkManager/system-connections/OSG.nmconnection"
