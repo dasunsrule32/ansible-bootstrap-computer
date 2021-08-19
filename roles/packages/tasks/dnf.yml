@@ -26,7 +26,7 @@
       - openrazer-meta
       - polychromatic
       - kernel-devel
-      - teams-insiders
+      - teams
       - libnsl
       - htop
       - snapper
