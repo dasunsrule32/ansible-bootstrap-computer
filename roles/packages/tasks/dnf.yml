@@ -57,6 +57,7 @@
       - zsh
       - insync
       - zerotier-one
+      - powershell
     exclude:
       - gstreamer1-plugins-bad-free-devel
       - lame-devel

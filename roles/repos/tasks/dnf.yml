@@ -102,6 +102,16 @@
     gpgcheck: yes
     enabled: yes
 
+- name: Installing Microsoft Repo
+  yum_repository:
+    name: packages-microsoft-com-prod
+    file: microsoft
+    description: Microsoft Prod Packages
+    baseurl: https://packages.microsoft.com/rhel/7/prod/
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: yes
+    enabled: yes
+
 - name: Install RPMFUSION free repo package
   dnf:
     name: 'https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm'
