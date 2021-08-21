@@ -62,6 +62,7 @@
       - docker-ce-cli
       - docker-compose
       - containerd.io
+      - libvirt-client
     exclude:
       - gstreamer1-plugins-bad-free-devel
       - lame-devel
