@@ -8,3 +8,9 @@
     name: "{{ user_group }}"
     gid: 1000
     state: present
+
+- name: Docker group
+  group:
+    name: docker
+    gid: 500
+    state: present

@@ -12,5 +12,12 @@
     home: "/home/{{ user_group }}"
     uid: 1000
     group: 1000
-    groups: wheel,plugdev
+    groups: wheel,plugdev,docker
     update_password: on_create
+
+- name: Docker user
+  user:
+    name: docker
+    shell: /usr/bin/bash
+    uid: 500
+    group: 500
