@@ -22,3 +22,7 @@
 - include: updates.yml
   tags:
     - updates
+
+- include: services.yml
+  tags:
+    - services

@@ -112,6 +112,36 @@
     gpgcheck: yes
     enabled: yes
 
+- name: Installing Docker CE Stable
+  yum_repository:
+    name: docker-ce-stable
+    file: docker-ce.repo
+    description: Docker CE Stable - $basearch
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+    gpgcheck: yes
+    enabled: yes
+
+- name: Installing Docker CE Stable Debuginfo
+  yum_repository:
+    name: docker-ce-stable-debuginfo
+    file: docker-ce.repo
+    description: Docker CE Stable - Debuginfo $basearch
+    baseurl: https://download.docker.com/linux/fedora/$releasever/debug-$basearch/stable
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+    gpgcheck: yes
+    enabled: no
+
+- name: Installing Docker CE Stable Debuginfo
+  yum_repository:
+    name: docker-ce-stable-source
+    file: docker-ce.repo
+    description: Docker CE Stable - Sources
+    baseurl: https://download.docker.com/linux/fedora/$releasever/source/stable
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+    gpgcheck: yes
+    enabled: no
+
 - name: Install RPMFUSION free repo package
   dnf:
     name: 'https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm'
