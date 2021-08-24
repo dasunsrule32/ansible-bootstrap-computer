@@ -132,7 +132,7 @@
     gpgcheck: yes
     enabled: no
 
-- name: Installing Docker CE Stable Debuginfo
+- name: Installing Docker CE Stable Sources
   yum_repository:
     name: docker-ce-stable-source
     file: docker-ce.repo
