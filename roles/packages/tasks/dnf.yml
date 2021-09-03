@@ -63,6 +63,7 @@
       - docker-compose
       - containerd.io
       - libvirt-client
+      - gnome-network-displays
     exclude:
       - gstreamer1-plugins-bad-free-devel
       - lame-devel
