@@ -64,6 +64,7 @@
       - containerd.io
       - libvirt-client
       - gnome-network-displays
+      - wavemon
     exclude:
       - gstreamer1-plugins-bad-free-devel
       - lame-devel
