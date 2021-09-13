@@ -65,6 +65,7 @@
       - libvirt-client
       - gnome-network-displays
       - wavemon
+      - firewall-config
     exclude:
       - gstreamer1-plugins-bad-free-devel
       - lame-devel
