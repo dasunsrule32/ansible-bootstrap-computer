@@ -6,4 +6,5 @@
       - org.gnome.Extensions
       - com.discordapp.Discord
       - com.bitwarden.desktop
+      - com.getpostman.Postman
     state: present
