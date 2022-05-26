@@ -1,3 +1,3 @@
 # ansible-bootstrap-computer
 
-Customize Fedora install
+Customize Linux Distribution install
